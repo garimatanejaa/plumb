@@ -31,7 +31,7 @@ Usage:
 A claim is a line with evidence in a comment:
   - Login lives in the auth package <!-- plumb: exists src/auth ; grep "func Login" src/auth -->
 
-Evidence: exists PATH | absent PATH | grep "RE2" PATH | hash PATH[:A-B] HEX8+
+Evidence: exists PATH | absent PATH | grep "RE2" PATH | hash PATH[:A-B] HEX8+ | count "GLOB" DIR OP N
 Default files: CLAUDE.md and AGENTS.md in the current directory.
 Default root: the directory containing the note (the current directory for hash and mcp).
 Exit codes: 0 all fresh, 1 stale claims found, 2 usage or I/O error.
