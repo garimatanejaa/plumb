@@ -100,7 +100,8 @@ type snapFile struct {
 	data []byte
 }
 
-const maxSnapshotBytes = 512 << 20
+// maxSnapshotBytes is a variable so tests can exercise the fallback.
+var maxSnapshotBytes = 512 << 20
 
 // Snapshot returns a Checker that reads the repository once and then answers
 // FilesMatching, FilesMatchingAll and FilesMatchingHint from memory. It is
