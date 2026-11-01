@@ -1,0 +1,128 @@
+[
+  {
+    "file": "CLAUDE.md",
+    "results": [
+      {
+        "claim": {
+          "line": 5,
+          "text": "Login is handled in the auth package",
+          "evidence": [
+            {
+              "kind": "exists",
+              "args": [
+                "src/auth"
+              ]
+            },
+            {
+              "kind": "grep",
+              "args": [
+                "func Login",
+                "src/auth"
+              ]
+            }
+          ]
+        },
+        "stale": false
+      },
+      {
+        "claim": {
+          "line": 6,
+          "text": "Config lives in config/app.yaml",
+          "evidence": [
+            {
+              "kind": "exists",
+              "args": [
+                "config/app.yaml"
+              ]
+            }
+          ]
+        },
+        "stale": true,
+        "reasons": [
+          "exists config/app.yaml: path does not exist"
+        ]
+      },
+      {
+        "claim": {
+          "line": 7,
+          "text": "The legacy billing module was removed",
+          "evidence": [
+            {
+              "kind": "absent",
+              "args": [
+                "src/billing"
+              ]
+            }
+          ]
+        },
+        "stale": false
+      },
+      {
+        "claim": {
+          "line": 8,
+          "text": "HTTP retries are capped by maxRetries",
+          "evidence": [
+            {
+              "kind": "grep",
+              "args": [
+                "maxRetries",
+                "src/http"
+              ]
+            }
+          ]
+        },
+        "stale": true,
+        "reasons": [
+          "grep \"maxRetries\" src/http: no match (searched 1 files)"
+        ]
+      },
+      {
+        "claim": {
+          "line": 9,
+          "text": "Login's signature is pinned",
+          "evidence": [
+            {
+              "kind": "hash",
+              "args": [
+                "src/auth/login.go:3-5",
+                "072740ab"
+              ]
+            }
+          ]
+        },
+        "stale": false
+      },
+      {
+        "claim": {
+          "line": 10,
+          "text": "The HTTP client file is unchanged",
+          "evidence": [
+            {
+              "kind": "hash",
+              "args": [
+                "src/http/client.go",
+                "deadbeef"
+              ]
+            }
+          ]
+        },
+        "stale": true,
+        "reasons": [
+          "hash src/http/client.go: content changed (now f315eee7)"
+        ]
+      },
+      {
+        "claim": {
+          "line": 11,
+          "text": "A typo in the evidence kind",
+          "evidence": null,
+          "parseError": "unknown evidence \"frobnicate\" (use exists, absent, grep, hash or count)"
+        },
+        "stale": true,
+        "reasons": [
+          "invalid evidence: unknown evidence \"frobnicate\" (use exists, absent, grep, hash or count)"
+        ]
+      }
+    ]
+  }
+]

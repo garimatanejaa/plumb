@@ -1,0 +1,13 @@
+CLAUDE.md
+  ✓ line 5  Login is handled in the auth package
+  ✗ line 6  Config lives in config/app.yaml
+      exists config/app.yaml: path does not exist
+  ✓ line 7  The legacy billing module was removed
+  ✗ line 8  HTTP retries are capped by maxRetries
+      grep "maxRetries" src/http: no match (searched 1 files)
+  ✓ line 9  Login's signature is pinned
+  ✗ line 10  The HTTP client file is unchanged
+      hash src/http/client.go: content changed (now f315eee7)
+  ✗ line 11  A typo in the evidence kind
+      invalid evidence: unknown evidence "frobnicate" (use exists, absent, grep, hash or count)
+7 claims, 4 stale
